@@ -6,12 +6,15 @@ enable_testing()
 # Find GTest
 find_package(GTest REQUIRED)
 
+# Add include directories
+include_directories(${CMAKE_SOURCE_DIR}/src)
+
 # Automatically find all test source files
 file(GLOB TEST_FILES *.cpp)
 
 add_executable(queueTests ${TEST_FILES})
 
-target_link_libraries(queueTests PRIVATE queue GTest::GTest GTest::Main Threads::Threads)
+target_link_libraries(queueTests PRIVATE GTest::GTest GTest::Main Threads::Threads)
 
 # Add all tests automatically
 foreach(test_file ${TEST_FILES})
