@@ -11,11 +11,9 @@ void writer(Queue<int>& q) {
     std::cout << "Push(2)" << std::endl;
     q.Push(2);
     
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     std::cout << "Push(3)" << std::endl;
     q.Push(3);
     
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     std::cout << "Push(4) // Element 2 dropped!" << std::endl;
     q.Push(4);
     
